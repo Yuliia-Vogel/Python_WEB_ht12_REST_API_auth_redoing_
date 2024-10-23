@@ -464,6 +464,9 @@ files = [
     {file = "passlib-1.7.4.tar.gz", hash = "sha256:defd50f72b65c5402ab2c573830a6978e5f202ad0d984793c8dde2c4152ebe04"},
 ]
 
+[package.dependencies]
+bcrypt = {version = ">=3.1.0", optional = true, markers = "extra == \"bcrypt\""}
+
 [package.extras]
 argon2 = ["argon2-cffi (>=18.2.0)"]
 bcrypt = ["bcrypt (>=3.1.0)"]
@@ -1156,4 +1159,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11.5"
-content-hash = "86d296b26ae7e5d55a6d218589922f76ccc3fd65ba0ad9d43ce0f46f88b5d366"
+content-hash = "6fb4989853d8ca8069fdb98f5507d863fac356d08dd789a9db92cb736c858be9"

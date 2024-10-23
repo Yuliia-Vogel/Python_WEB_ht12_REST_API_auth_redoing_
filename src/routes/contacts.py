@@ -44,10 +44,13 @@ async def read_contact(contact_id: int, db: Session = Depends(get_db),
     return contact
 
 
-@router.post("/", response_model=ContactBase)
+@router.post("/", response_model=ContactResponse, status_code=status.HTTP_201_CREATED,
+             responses={201: {"description": "Contact created", "model": ContactResponse}})
 async def create_contact(body: ContactBase, db: Session = Depends(get_db),
                          current_user: User = Depends(auth_service.get_current_user)):
-    return await repository_contacts.create_contact(body, current_user, db)
+    # return await repository_contacts.create_contact(body, current_user, db)
+    new_contact = await repository_contacts.create_contact(body, current_user, db)
+    return ContactResponse.from_orm(new_contact)
 
 
 @router.put("/{contact_id}", response_model=ContactResponse) # для редагування контактів, потрібно вносити дані в УСІ поля

@@ -15,9 +15,8 @@ pydantic = { version = "2.9.2", extras = ["email"] }
 email_validator = "2.2.0"
 libgravatar = "^1.0.4"
 python-jose = "^3.3.0"
-passlib = "^1.7.4"
+passlib = { version = "^1.7.4", extras = ["bcrypt"] }
 python-multipart = "^0.0.12"
-bcrypt = "^4.2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

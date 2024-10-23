@@ -29,7 +29,8 @@ async def create_contact(body: ContactBase, user: User, db: Session) -> Contact:
     db.add(new_contact)
     db.commit()
     db.refresh(new_contact)
-    return new_contact
+    # return new_contact
+    return ContactResponse.from_orm(new_contact)
 
 
 async def update_contact(contact_id: int, body: ContactUpdate, user: User, db: Session) -> Contact | None:
