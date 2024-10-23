@@ -1,0 +1,15 @@
+├── src
+|  ├─database
+│  |   ├── db.py
+│  |   └── models.py
+│  ├── repository
+│  |   ├── contacts.py
+│  |   └── users.py
+│  ├── routes
+│  |   ├── auth.py
+│  |   └── contacts.py
+│  ├── services
+│  |   └── auth.py
+│  └── schemas.py
+├── pyproject.toml
+└── main.py
